@@ -1,1 +1,1526 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ihthisham Moosa M | Cybersecurity</title>
+
+<meta name="description"
+content="Ihthisham Moosa — Cybersecurity student focused on ethical hacking, AI security and cloud security.">
+
+<style>
+
+/* ==============================
+   RESET
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #080a09;
+    color: #e8eee9;
+    font-family: "Courier New", monospace;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* ==============================
+   VARIABLES
+================================= */
+
+:root {
+    --bg: #080a09;
+    --panel: #0d110f;
+    --panel2: #111713;
+
+    --green: #39ff88;
+    --green-dark: #173c27;
+
+    --text: #e8eee9;
+    --muted: #7d8981;
+
+    --border: #1d2b22;
+}
+
+
+/* ==============================
+   GRID BACKGROUND
+================================= */
+
+body::before {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    background-image:
+        linear-gradient(rgba(57,255,136,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(57,255,136,0.025) 1px, transparent 1px);
+
+    background-size: 50px 50px;
+
+    pointer-events: none;
+
+    z-index: -2;
+}
+
+
+/* ==============================
+   GLOW
+================================= */
+
+body::after {
+    content: "";
+
+    position: fixed;
+
+    width: 500px;
+    height: 500px;
+
+    top: -200px;
+    right: -150px;
+
+    background: rgba(57,255,136,0.07);
+
+    filter: blur(100px);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+
+/* ==============================
+   NAVBAR
+================================= */
+
+nav {
+
+    height: 75px;
+
+    padding: 0 7%;
+
+    border-bottom: 1px solid var(--border);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    background: rgba(8,10,9,0.85);
+
+    backdrop-filter: blur(15px);
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+}
+
+.logo {
+
+    color: var(--green);
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.logo::before {
+    content: "> ";
+}
+
+.nav-links {
+
+    display: flex;
+
+    gap: 30px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+.nav-links a:hover {
+    color: var(--green);
+}
+
+
+/* ==============================
+   HERO
+================================= */
+
+.hero {
+
+    min-height: calc(100vh - 75px);
+
+    padding: 100px 7%;
+
+    display: flex;
+
+    align-items: center;
+
+    position: relative;
+}
+
+.hero-content {
+    max-width: 1000px;
+}
+
+
+/* STATUS */
+
+.status {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    border: 1px solid var(--border);
+
+    background: var(--panel);
+
+    padding: 9px 15px;
+
+    color: var(--green);
+
+    font-size: 12px;
+
+    margin-bottom: 35px;
+}
+
+.status-dot {
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: var(--green);
+
+    box-shadow: 0 0 10px var(--green);
+}
+
+
+/* TERMINAL */
+
+.terminal-line {
+
+    color: var(--muted);
+
+    font-size: 15px;
+
+    margin-bottom: 12px;
+}
+
+.terminal-line span {
+    color: var(--green);
+}
+
+
+/* NAME */
+
+.hero h1 {
+
+    font-family: Arial, sans-serif;
+
+    font-size: clamp(60px, 10vw, 140px);
+
+    line-height: 0.9;
+
+    letter-spacing: -7px;
+
+    margin-bottom: 35px;
+}
+
+.hero h1 span {
+    color: var(--green);
+}
+
+
+/* DESCRIPTION */
+
+.hero-description {
+
+    color: var(--muted);
+
+    font-size: 18px;
+
+    max-width: 700px;
+
+    margin-bottom: 40px;
+}
+
+
+/* BUTTONS */
+
+.buttons {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+}
+
+.btn {
+
+    padding: 15px 25px;
+
+    border: 1px solid var(--border);
+
+    font-size: 13px;
+
+    transition: 0.3s;
+}
+
+.btn:hover {
+
+    border-color: var(--green);
+
+    color: var(--green);
+
+    transform: translateY(-3px);
+}
+
+.btn-primary {
+
+    background: var(--green);
+
+    color: #061009;
+
+    border-color: var(--green);
+
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+
+    color: #061009;
+
+    box-shadow: 0 0 25px rgba(57,255,136,0.25);
+}
+
+
+/* ==============================
+   SECTION
+================================= */
+
+section {
+
+    padding: 110px 7%;
+}
+
+.section-header {
+
+    margin-bottom: 60px;
+}
+
+.section-number {
+
+    color: var(--green);
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 15px;
+}
+
+.section-title {
+
+    font-family: Arial, sans-serif;
+
+    font-size: clamp(40px, 6vw, 75px);
+
+    letter-spacing: -3px;
+}
+
+
+/* ==============================
+   ABOUT
+================================= */
+
+.about {
+
+    border-top: 1px solid var(--border);
+}
+
+.about-grid {
+
+    display: grid;
+
+    grid-template-columns: 1.3fr 1fr;
+
+    gap: 80px;
+}
+
+.about-text {
+
+    color: var(--muted);
+
+    font-size: 17px;
+
+    max-width: 700px;
+}
+
+.about-text strong {
+
+    color: var(--green);
+}
+
+
+/* TERMINAL CARD */
+
+.terminal {
+
+    border: 1px solid var(--border);
+
+    background: var(--panel);
+
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+}
+
+.terminal-top {
+
+    padding: 12px 15px;
+
+    border-bottom: 1px solid var(--border);
+
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+.terminal-body {
+
+    padding: 25px;
+
+    font-size: 13px;
+
+    line-height: 2;
+}
+
+.terminal-body .green {
+    color: var(--green);
+}
+
+.terminal-body .gray {
+    color: var(--muted);
+}
+
+
+/* ==============================
+   SKILLS
+================================= */
+
+.skills {
+
+    border-top: 1px solid var(--border);
+}
+
+.skills-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+}
+
+.skill-card {
+
+    background: var(--panel);
+
+    border: 1px solid var(--border);
+
+    padding: 30px;
+
+    transition: 0.3s;
+
+    position: relative;
+}
+
+.skill-card:hover {
+
+    border-color: var(--green);
+
+    transform: translateY(-5px);
+}
+
+.skill-icon {
+
+    color: var(--green);
+
+    font-size: 22px;
+
+    margin-bottom: 25px;
+}
+
+.skill-card h3 {
+
+    font-family: Arial, sans-serif;
+
+    margin-bottom: 10px;
+
+    font-size: 22px;
+}
+
+.skill-card p {
+
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+
+/* ==============================
+   PROJECTS
+================================= */
+
+.projects {
+
+    border-top: 1px solid var(--border);
+}
+
+.projects-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+.project-card {
+
+    background: var(--panel);
+
+    border: 1px solid var(--border);
+
+    padding: 35px;
+
+    transition: 0.35s;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.project-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--green);
+
+    transition: 0.4s;
+}
+
+.project-card:hover::before {
+
+    width: 100%;
+}
+
+.project-card:hover {
+
+    border-color: #294534;
+
+    transform: translateY(-6px);
+}
+
+.project-number {
+
+    color: var(--green);
+
+    font-size: 12px;
+
+    margin-bottom: 30px;
+}
+
+.project-card h3 {
+
+    font-family: Arial, sans-serif;
+
+    font-size: 30px;
+
+    margin-bottom: 15px;
+}
+
+.project-card p {
+
+    color: var(--muted);
+
+    font-size: 14px;
+
+    margin-bottom: 25px;
+}
+
+.tags {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    margin-bottom: 25px;
+}
+
+.tag {
+
+    border: 1px solid var(--border);
+
+    padding: 5px 9px;
+
+    color: var(--muted);
+
+    font-size: 10px;
+}
+
+.project-link {
+
+    color: var(--green);
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+}
+
+
+/* ==============================
+   LEARNING
+================================= */
+
+.learning {
+
+    border-top: 1px solid var(--border);
+}
+
+.learning-box {
+
+    border: 1px solid var(--border);
+
+    background: var(--panel);
+}
+
+.learning-row {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 22px 25px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.learning-row:last-child {
+    border-bottom: none;
+}
+
+.learning-row h3 {
+
+    font-family: Arial, sans-serif;
+
+    font-size: 18px;
+}
+
+.learning-row span {
+
+    color: var(--green);
+
+    font-size: 11px;
+}
+
+
+/* ==============================
+   CONTACT
+================================= */
+
+.contact {
+
+    border-top: 1px solid var(--border);
+
+    text-align: center;
+}
+
+.contact h2 {
+
+    font-family: Arial, sans-serif;
+
+    font-size: clamp(55px, 10vw, 130px);
+
+    line-height: 0.85;
+
+    letter-spacing: -6px;
+
+    margin-bottom: 35px;
+}
+
+.contact h2 span {
+    color: var(--green);
+}
+
+.contact p {
+
+    color: var(--muted);
+
+    margin-bottom: 35px;
+}
+
+.contact-buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+
+/* ==============================
+   FOOTER
+================================= */
+
+footer {
+
+    border-top: 1px solid var(--border);
+
+    padding: 25px 7%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: var(--muted);
+
+    font-size: 11px;
+}
+
+
+/* ==============================
+   MOBILE
+================================= */
+
+@media (max-width: 800px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        padding: 80px 6%;
+    }
+
+    .hero h1 {
+        letter-spacing: -4px;
+    }
+
+    section {
+        padding: 80px 6%;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 65px;
+    }
+
+    .contact h2 {
+        letter-spacing: -3px;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =================================
+     NAVIGATION
+================================== -->
+
+<nav>
+
+    <div class="logo">
+        IM
+    </div>
+
+    <div class="nav-links">
+
+        <a href="#about">ABOUT</a>
+
+        <a href="#skills">SKILLS</a>
+
+        <a href="#projects">PROJECTS</a>
+
+        <a href="#contact">CONTACT</a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =================================
+     HERO
+================================== -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="status">
+
+            <div class="status-dot"></div>
+
+            SYSTEM ONLINE
+
+        </div>
+
+
+        <div class="terminal-line">
+
+            <span>root@ihthisham</span>:~$ whoami
+
+        </div>
+
+
+        <h1>
+
+            Ihthisham<br>
+
+            <span>Moosa.</span>
+
+        </h1>
+
+
+        <p class="hero-description">
+
+            Cybersecurity student building practical security
+            projects, exploring AI security and understanding
+            how modern systems can be protected.
+
+        </p>
+
+
+        <div class="buttons">
+
+            <a
+                href="#projects"
+                class="btn btn-primary">
+
+                VIEW PROJECTS
+
+            </a>
+
+
+            <a
+                href="https://github.com/YOUR_USERNAME"
+                target="_blank"
+                class="btn">
+
+                GITHUB ↗️
+
+            </a>
+
+
+            <a
+                href="https://www.linkedin.com/in/YOUR_LINKEDIN/"
+                target="_blank"
+                class="btn">
+
+                LINKEDIN ↗️
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================
+     ABOUT
+================================== -->
+
+<section class="about" id="about">
+
+    <div class="section-header">
+
+        <div class="section-number">
+            01 / ABOUT
+        </div>
+
+        <h2 class="section-title">
+            Who am I?
+        </h2>
+
+    </div>
+
+
+    <div class="about-grid">
+
+
+        <div class="about-text">
+
+            <p>
+
+                I'm <strong>Ihthisham Moosa</strong>,
+                a Computer Science student focused on
+                cybersecurity.
+
+            </p>
+
+            <br>
+
+            <p>
+
+                I'm interested in ethical hacking,
+                security monitoring, web security,
+                AI security and cloud security.
+
+            </p>
+
+            <br>
+
+            <p>
+
+                Rather than only following tutorials,
+                I want to learn by building things,
+                testing them and documenting what I discover.
+
+            </p>
+
+        </div>
+
+
+        <div class="terminal">
+
+            <div class="terminal-top">
+
+                ihthisham@portfolio: ~/about
+
+            </div>
+
+            <div class="terminal-body">
+
+                <div>
+
+                    <span class="green">$</span>
+                    cat profile.txt
+
+                </div>
+
+                <div class="gray">
+
+                    NAME: Ihthisham Moosa
+
+                </div>
+
+                <div class="gray">
+
+                    FIELD: Cybersecurity
+
+                </div>
+
+                <div class="gray">
+
+                    INTEREST: AI Security
+
+                </div>
+
+                <div class="gray">
+
+                    INTEREST: Cloud Security
+
+                </div>
+
+                <div class="gray">
+
+                    MODE: Learn → Build → Test
+
+                </div>
+
+                <br>
+
+                <div>
+
+                    <span class="green">$</span>
+                    echo "keep learning"
+
+                </div>
+
+                <div class="green">
+
+                    keep learning
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================
+     SKILLS
+================================== -->
+
+<section class="skills" id="skills">
+
+    <div class="section-header">
+
+        <div class="section-number">
+            02 / SKILLS
+        </div>
+
+        <h2 class="section-title">
+            Toolkit.
+        </h2>
+
+    </div>
+
+
+    <div class="skills-grid">
+
+
+        <div class="skill-card">
+
+            <div class="skill-icon">
+                &gt;_
+            </div>
+
+            <h3>Linux</h3>
+
+            <p>
+                Command line, permissions,
+                processes and security fundamentals.
+            </p>
+
+        </div>
+
+
+        <div class="skill-card">
+
+            <div class="skill-icon">
+                &lt;/&gt;
+            </div>
+
+            <h3>Python</h3>
+
+            <p>
+                Security scripting, automation
+                and small security tools.
+            </p>
+
+        </div>
+
+
+        <div class="skill-card">
+
+            <div class="skill-icon">
+                [NET]
+            </div>
+
+            <h3>Networking</h3>
+
+            <p>
+                TCP/IP, ports, protocols,
+                scanning and enumeration.
+            </p>
+
+        </div>
+
+
+        <div class="skill-card">
+
+            <div class="skill-icon">
+                [WEB]
+            </div>
+
+            <h3>Web Security</h3>
+
+            <p>
+                Understanding web vulnerabilities,
+                testing and defensive concepts.
+            </p>
+
+        </div>
+
+
+        <div class="skill-card">
+
+            <div class="skill-icon">
+                [AI]
+            </div>
+
+            <h3>AI Security</h3>
+
+            <p>
+                Exploring prompt injection,
+                agent security and data leakage.
+            </p>
+
+        </div>
+
+
+        <div class="skill-card">
+
+            <div class="skill-icon">
+                [☁️]
+            </div>
+
+            <h3>Cloud Security</h3>
+
+            <p>
+                Learning cloud infrastructure,
+                identity and security fundamentals.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================
+     PROJECTS
+================================== -->
+
+<section class="projects" id="projects">
+
+    <div class="section-header">
+
+        <div class="section-number">
+            03 / PROJECTS
+        </div>
+
+        <h2 class="section-title">
+            Things I've<br>
+            Built.
+        </h2>
+
+    </div>
+
+
+    <div class="projects-grid">
+
+
+        <!-- PROJECT 01 -->
+
+        <div class="project-card">
+
+            <div class="project-number">
+                PROJECT_01
+            </div>
+
+            <h3>Mini SOC</h3>
+
+            <p>
+
+                Lightweight security monitoring project
+                focused on Linux logs, SSH activity,
+                port scanning detection and incident response.
+
+            </p>
+
+            <div class="tags">
+
+                <span class="tag">LINUX</span>
+
+                <span class="tag">PYTHON</span>
+
+                <span class="tag">SOC</span>
+
+                <span class="tag">DETECTION</span>
+
+            </div>
+
+
+            <!-- CHANGE LINK -->
+
+            <a
+                href="https://github.com/YOUR_USERNAME/mini-soc"
+                target="_blank"
+                class="project-link">
+
+                VIEW REPOSITORY →
+
+            </a>
+
+        </div>
+
+
+
+        <!-- PROJECT 02 -->
+
+        <div class="project-card">
+
+            <div class="project-number">
+                PROJECT_02
+            </div>
+
+            <h3>Web Security Lab</h3>
+
+            <p>
+
+                Controlled security laboratory exploring
+                common web vulnerabilities and their
+                mitigations.
+
+            </p>
+
+            <div class="tags">
+
+                <span class="tag">WEB</span>
+
+                <span class="tag">BURP</span>
+
+                <span class="tag">SQLi</span>
+
+                <span class="tag">XSS</span>
+
+            </div>
+
+
+            <!-- CHANGE LINK -->
+
+            <a
+                href="https://github.com/YOUR_USERNAME/web-security-lab"
+                target="_blank"
+                class="project-link">
+
+                VIEW REPOSITORY →
+
+            </a>
+
+        </div>
+
+
+
+        <!-- PROJECT 03 -->
+
+        <div class="project-card">
+
+            <div class="project-number">
+                PROJECT_03
+            </div>
+
+            <h3>AI Agent Security</h3>
+
+            <p>
+
+                Security testing project exploring
+                prompt injection, tool abuse and
+                sensitive data leakage in AI agents.
+
+            </p>
+
+            <div class="tags">
+
+                <span class="tag">AI</span>
+
+                <span class="tag">LLM</span>
+
+                <span class="tag">AGENTS</span>
+
+                <span class="tag">SECURITY</span>
+
+            </div>
+
+
+            <!-- CHANGE LINK -->
+
+            <a
+                href="https://github.com/YOUR_USERNAME/ai-agent-security"
+                target="_blank"
+                class="project-link">
+
+                VIEW REPOSITORY →
+
+            </a>
+
+        </div>
+
+
+
+        <!-- PROJECT 04 -->
+
+        <div class="project-card">
+
+            <div class="project-number">
+                Portable Cybersecurity tool
+            </div>
+
+            <h3>Security Tools</h3>
+
+            <p>
+
+                Created a small portable cybersecurity tool--low cost security utility
+              for a college project by leading them throughout till the submission.
+
+            </p>
+
+            <div class="tags">
+
+                <span class="tag">PYTHON</span>
+
+                <span class="tag">NETWORKING</span>
+
+                <span class="tag">AUTOMATION</span>
+
+            </div>
+
+
+            <a
+                href="https://github.com/YOUR_USERNAME"
+                target="_blank"
+                class="project-link">
+
+                VIEW GITHUB →
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================
+     CURRENTLY LEARNING
+================================== -->
+
+<section class="learning">
+
+    <div class="section-header">
+
+        <div class="section-number">
+            04 / CURRENTLY LEARNING
+        </div>
+
+        <h2 class="section-title">
+            Current<br>
+            Mission.
+        </h2>
+
+    </div>
+
+
+    <div class="learning-box">
+
+
+        <div class="learning-row">
+
+            <h3>AI Security</h3>
+
+            <span>ACTIVE</span>
+
+        </div>
+
+
+        <div class="learning-row">
+
+            <h3>Cloud Security</h3>
+
+            <span>ACTIVE</span>
+
+        </div>
+
+
+        <div class="learning-row">
+
+            <h3>Ethical Hacking</h3>
+
+            <span>LEARNING</span>
+
+        </div>
+
+
+        <div class="learning-row">
+
+            <h3>SOC Analysis</h3>
+
+            <span>LEARNING</span>
+
+        </div>
+
+
+        <div class="learning-row">
+
+            <h3>AI Agent Security</h3>
+
+            <span>BUILDING</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================
+     CONTACT
+================================== -->
+
+<section class="contact" id="contact">
+
+    <div class="section-number">
+        05 / CONTACT
+    </div>
+
+
+    <h2>
+
+        Let's<br>
+
+        <span>Connect.</span>
+
+    </h2>
+
+
+    <p>
+
+        Open to cybersecurity projects,
+        collaboration and internship opportunities.
+
+    </p>
+
+
+    <div class="contact-buttons">
+
+
+        <!-- CHANGE EMAIL -->
+
+        <a
+            href="mailto:ihthishammoosa50@gmail.com"
+            class="btn btn-primary">
+
+            EMAIL
+
+        </a>
+
+
+        <!-- CHANGE LINKEDIN -->
+
+        <a
+            href="https://www.linkedin.com/in/ihthisham-moosa"
+            target="_blank"
+            class="btn">
+
+            LINKEDIN
+
+        </a>
+
+
+        <!-- CHANGE GITHUB -->
+
+        <a
+            href="https://github.com/ihthishammoosa50-droid"
+            target="_blank"
+            class="btn">
+
+            GITHUB
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================
+     FOOTER
+================================== -->
+
+<footer>
+
+    <span>
+        © 2026 Ihthisham Moosa
+    </span>
+
+    <span>
+        // build • break • secure
+    </span>
+
+</footer>
+
+
+</body>
+
+</html>
